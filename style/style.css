@@ -1,0 +1,46 @@
+.page-container{
+    width: 1380px;
+    margin: 0 auto;
+}
+
+header{
+    background-color: #F9F7F3;
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 25px;
+}
+.blog-btn{
+    color: black;
+    font-weight: bolder;
+    font-size: 18px;
+    padding: 6px 25px;
+    background-color: #B4F461;
+    border-radius: 5px;
+}
+.nav-title{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav-title img{
+    padding-right: 15px;
+}
+.nav-amount{
+    display: flex;
+    text-align: center;
+    justify-items: center;
+    cursor: pointer;
+    color: #111111;
+    font-weight: bold;
+}
+
+.nav-amount span{
+    padding-right: 6px;
+}
