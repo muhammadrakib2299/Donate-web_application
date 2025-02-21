@@ -71,12 +71,3 @@ header{
     cursor: pointer;
     border: 1px solid #111111;
 }
-
-
-
-footer{
-    font-size: 18px;
-    padding: 30px 10px;
-    text-align: center;
-    background-color: #F9F7F3;
-}
