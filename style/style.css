@@ -1,5 +1,5 @@
 .page-container{
-    width: 1380px;
+    width: 1280px;
     margin: 0 auto;
 }
 
@@ -70,4 +70,27 @@ header{
     border-radius: 5px;
     cursor: pointer;
     border: 1px solid #111111;
+}
+
+.donate-amount-status{
+    width: 130px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    background-color: #11111138;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+.donate-btn{
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px 25px;
+    margin-top: 15px;
+    background-color: #B4F461;
+    border-radius: 5px;
 }
