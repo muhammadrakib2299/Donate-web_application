@@ -1,33 +1,33 @@
-// Donate amount process by using donate button
-document.getElementById('btn-donate').addEventListener('click', function(e){
-    e.preventDefault();
-    // get the amount user given the input fill
-    const getDonateAmount = document.getElementById('input-donate-amount').value;
-    // get the current donation amount status
-    const donateAmountStatus = document.getElementById('donate-balance-status').innerText;
-     // get user account balance status
-     const acountAmount = document.getElementById('account-amount-status').innerText;
+// Get all donate buttons
+const buttons = document.querySelectorAll(".donate-btn");
 
-     if(getDonateAmount < acountAmount){
-        if(getDonateAmount >= 0 && getDonateAmount > -getDonateAmount ){
-            // additoin the given amount
-            const updateAmountStatus = parseFloat(donateAmountStatus) + parseFloat(getDonateAmount);
-            document.getElementById('donate-balance-status').innerText = updateAmountStatus; 
-            document.getElementById('input-donate-amount').value = ' ';
-    
-            const updateAcountSatus = acountAmount - getDonateAmount
-            document.getElementById('account-amount-status').innerText = updateAcountSatus;
+buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent page reload
 
+         // Get the input field and donation amount from the clicked card
+         const inputField = getInputFieldByButton(button);
+         const donateAmount = parseFloat(inputField.value) || 0;
+
+        // Get account balance
+        const accountAmount = parseFloat(document.getElementById('account-amount-status').innerText) || 0;
+
+        // Find the corresponding donate status element in the clicked section
+        const donateStatusElement = getDonateStatusElement(button);
+        const currentDonateStatus = parseFloat(donateStatusElement.innerText) || 0;
+
+        // Apply conditions
+        if (donateAmount > 0 && donateAmount <= accountAmount) {
+            const updatedAmount = currentDonateStatus + donateAmount;
+            donateStatusElement.innerText = updatedAmount; // Update UI
+
+            // Deduct the donation amount from the user's balance
+            document.getElementById('account-amount-status').innerText = (accountAmount - donateAmount).toFixed(2);
+            // Clear the input field after successful donation
+            inputField.value = '';
+            
+        } else {
+            alert("Donation unsuccessful. Please enter a valid amount.");
         }
-        else{
-            alert("Donation do not sucessful, Try again")
-        }
-     }
-     else{
-        alert('your balance is low');
-     }
-
-
-    
-
-})
+    });
+});
