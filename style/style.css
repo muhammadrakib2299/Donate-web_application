@@ -69,9 +69,29 @@ header{
     margin-right: 20px;
     border-radius: 5px;
     cursor: pointer;
-    border: 1px solid #111111;
+    border: 1px solid #80808033;
 }
 
+/* start Donation transection history section  */
+.donation-transection-section{
+    padding: 20px 35px;
+    margin: 80px 25px;
+}
+
+.transection-history{
+    font-size: 18px;
+    padding: 25px 40px;
+    color: black;
+    border: 1.5px solid #80808000;
+    border-radius: 5px;
+    margin: 25px 50px;
+    background-color: #f9f6f387;
+}
+
+
+
+
+/* donation card container */
 .donate-amount-status{
     width: 130px;
     padding: 10px;

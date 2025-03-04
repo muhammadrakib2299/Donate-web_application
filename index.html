@@ -36,18 +36,21 @@
      <main class="page-container">
 
       <div class="button-part">
-         <button class="donation-btn">Donation</button>
-         <button class="history-btn">History</button>
+         <button id="donation-btn" class="donation-btn">Donation</button>
+         <button id="history-btn" class="history-btn">History</button>
       </div>
 
       <!-- Start Donation history -->
-      <div class="donation-history-container">
-
+      <div id="donation-transecttion-section" class="hidden donation-transection-section">
+        
+            <div id="transection-container">
+                
+            </div>
       </div>
       <!-- End Donation history -->
 
       <!-- Donation Card Container  -->
-     <div class="p-6">
+     <div id="donation-container-section" class="p-6">
         <!-- Start donate Card 1 -->
         <div class="card lg:card-side bg-base-100 shadow-xl my-5">
           <figure class="p-5">
@@ -183,8 +186,7 @@
                   </form>
                 </div>
             </div>
-          </div>
-        
+          </div>   
         </div>
         <!-- End donate Card 3 -->
 

@@ -1,6 +1,7 @@
-// Get all donate buttons
+// Get all donate now buttons
 const buttons = document.querySelectorAll(".donate-btn");
 
+// Donation process
 buttons.forEach(button => {
     button.addEventListener('click', (e) => {
         e.preventDefault(); // Prevent page reload
@@ -25,9 +26,31 @@ buttons.forEach(button => {
             document.getElementById('account-amount-status').innerText = (accountAmount - donateAmount).toFixed(2);
             // Clear the input field after successful donation
             inputField.value = '';
-            
+
+            // Add to transection history
+            const dateTime = new Date();
+            const div = document.createElement('div');
+                div.innerHTML = `
+                    <h1> Donate Status: ${donateAmount} Taka is donated.</h1> 
+                    <p> Date: ${dateTime} </p>
+            `
+            div.classList.add('transection-history');
+            document.getElementById('transection-container').appendChild(div);
+
         } else {
             alert("Donation unsuccessful. Please enter a valid amount.");
         }
     });
+});
+
+
+// get the donation button
+document.getElementById('donation-btn').addEventListener('click', function(){
+    showSectionById('donation-container-section');
+});
+
+// Get the History function
+document.getElementById('history-btn').addEventListener('click', function(){
+
+    showSectionById('donation-transecttion-section');
 });
